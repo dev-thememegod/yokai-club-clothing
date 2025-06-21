@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="shop-page">
+    <!-- Sidebar with Categories -->
+    <aside class="shop-sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li><a href="#cat1">Cat1</a></li>
+            <li><a href="#cat2">Cat2</a></li>
+            <li><a href="#cat3">Cat3</a></li>
+            <li><a href="#cat4">Cat4</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Product Grid -->
+    <div class="shop-content">
+        <h2 id="cat1">Cat1</h2>
+        <div class="product-grid">
+            {% for i in range(1, 4) %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/product{{ i }}.jpg') }}" alt="Product {{ i }}">
+                <h4>Product {{ i }}</h4>
+                <p>Printed</p>
+                <a href="https://externalstore.com/product/{{ i }}" class="buy-btn" target="_blank">Buy Now</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="cat2">Cat2</h2>
+        <div class="product-grid">
+            {% for i in range(4, 7) %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/product{{ i }}.jpg') }}" alt="Product {{ i }}">
+                <h4>Product {{ i }}</h4>
+                <p>Bold Printed</p>
+                <a href="https://externalstore.com/product/{{ i }}" class="buy-btn" target="_blank">Buy Now</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="cat3">Cat3</h2>
+        <div class="product-grid">
+            {% for i in range(7, 10) %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/product{{ i }}.jpg') }}" alt="Product {{ i }}">
+                <h4>Product {{ i }}</h4>
+                <p>Typography</p>
+                <a href="https://externalstore.com/product/{{ i }}" class="buy-btn" target="_blank">Buy Now</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

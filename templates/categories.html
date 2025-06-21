@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="category-page">
+    <h2>Shop by Categories</h2>
+
+    {% for i in range(1, 6) %}
+        <div class="category-section">
+            <h3>Category {{ i }}</h3>
+            <div class="product-grid">
+                {% for j in range(6) %}
+                    <div class="product-card fade-in">
+                        <div class="product-image"></div>
+                        <h4>Product {{ j+1 }}</h4>
+                        <p>Category {{ i }}</p>
+                        <a href="https://example.com" class="buy-now">Buy Now</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

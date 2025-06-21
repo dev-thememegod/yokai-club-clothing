@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOKAI CLUB CLOTHING</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Preloader -->
+<div id="preloader">
+  <img src="static/images/emblem.png" alt="Yokai Logo" id="preloader-logo">
+
+</div>
+    <!-- Header -->
+    <header class="main-header">
+    <div class="left-tab">
+    <a href="{{ url_for('categories') }}" class="category-btn">Categories</a>
+</div>
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="YŌKAI Logo">
+    </div>
+    <div class="right-tab">
+    <a href="{{ url_for('contact') }}">Contact Us</a>
+    <a href="{{ url_for('feedback') }}">Feedback</a>
+    <a href="{{ url_for('home') }}">Home</a>
+</div>
+
+</header>
+
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-section">
+            <h4>Need Help</h4>
+            <ul>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                <li><a href="{{ url_for('track') }}">Track Your Order</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Feedback</h4>
+            <ul>
+                <li><a href="{{ url_for('feedback') }}">Write to Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('vision') }}">Our Vision</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    setTimeout(() => {
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500); // Match fade-out
+    }, 2000); // Match duration of animation
+  });
+</script>
+
+
+</body>
+</html>
