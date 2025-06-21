@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: yokai-clothing-web
+    name: yokai-club-clothing-web
     runtime: python
     buildCommand: ""
     startCommand: gunicorn app:app
